@@ -223,21 +223,23 @@ main #services div article:nth-child(2) {
 main #services div article::after,
 main #services div article::before {
     position: absolute;
-    top: 10px;
-    left: 10px;
     content: '';
     border: 0px solid #f83200;
     transition: 400ms ease-in-out;
 }
 
 main #services div article::after {
-    width: calc(var(--extension) + 105px);
+    top: 10px;
+    left: 5px;
+    width: calc(var(--extension) + 110px);
     height: var(--extension);
     border-width: 1px 0;
 }
 
 main #services div article::before {
-    height: calc(var(--extension) + 5px);
+    bottom: -15px;
+    right: -10px;
+    height: calc(var(--extension) + 10px);
     width: calc(var(--extension) + 100px);
     border-width: 0 1px;
 }
@@ -333,4 +335,24 @@ footer {
 
 footer address ul {
     line-height: 2;
+    padding: 1em 0;
+}
+
+footer h3 {
+    text-decoration: underline;
+    padding-bottom: 1em;
+}
+
+footer article {
+    border-left: 1px solid #000;
+    padding-left: 1em;
+    display: flex;
+}
+
+footer label {
+    align-self: flex-end;
+}
+
+footer p {
+    justify-self: center;
 }
