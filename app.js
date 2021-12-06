@@ -3,15 +3,7 @@ window.addEventListener('scroll', () => {
         document.querySelector('header').classList.add('scrolled');
     } else {
         document.querySelector('header').classList.remove('scrolled');
-
     }
-});
-
-document.querySelectorAll('nav ul li').forEach(li => {
-    li.addEventListener('click', (e) => {
-        document.querySelector('.active').classList.remove('active');
-        e.target.parentElement.classList.add('active');
-    });
 });
 
 const testimonialsArray = document.querySelectorAll('#testimonials-section #testimonials article');
@@ -25,4 +17,19 @@ const rotateTestimonials = () => {
     }
 }
 
-setInterval(rotateTestimonials, 4000)
+setInterval(rotateTestimonials, 4000);
+
+window.addEventListener('scroll', () => {
+    document.querySelectorAll('main>section').forEach(sec => {
+        const scroll = window.scrollY;
+        const offsetTop = sec.offsetTop;
+        const height = sec.offsetHeight;
+        if (scroll >= offsetTop && scroll < height + offsetTop) {
+            const id = sec.getAttribute('id');
+            document.querySelectorAll('header nav ul li').forEach(li => {
+                li.classList.remove('active');
+                document.querySelector(`header nav ul li a[href*="${id}"]`).parentElement.classList.add('active');
+            });
+        }
+    });
+});
