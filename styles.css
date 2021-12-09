@@ -33,6 +33,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: height 400ms ease-in-out;
 }
 
 h1,
@@ -48,7 +49,6 @@ header.scrolled {
     --primary-color: #fff;
     --secondary-color: #000;
     height: 15vh;
-    transition: height 400ms ease-in-out;
 }
 
 header .logo {
@@ -101,14 +101,15 @@ header nav ul li.active::before {
 main {
     min-height: 200vh;
     width: 100vw;
+    padding-top: 20vh;
     background-color: rgba(255, 255, 255, 0.76);
 }
 
 main>section {
-    padding-top: 20vh;
+    padding: 20vh 0 5vh 0;
 }
 
-#home {
+.home {
     width: 100%;
     height: 100vh;
     background-image: url(https://images.pexels.com/photos/3037244/pexels-photo-3037244.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900);
@@ -117,23 +118,26 @@ main>section {
     position: relative;
 }
 
-#home section {
-    background: linear-gradient(to bottom, #000705f1, #000302d5, #000302d5, #00030200, #eefaf79f);
-    width: 100%;
-    height: 100%;
+.home section {
+    background: linear-gradient(-200deg, #000705f1, #000302d5, #811a01);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#home section p {
+.home section p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     max-width: 500px;
     font-size: 2em;
     color: #fff;
 }
 
-#home section button {
+.home section button {
     background-color: #f83200;
     border: none;
     padding: 1em 2em;
@@ -144,10 +148,11 @@ main>section {
     font-family: inherit;
 }
 
-#home address {
+.home address {
     position: absolute;
     right: 2em;
-    top: 30%;
+    top: 50%;
+    transform: translateY(-50%);
     height: 60%;
     background-color: rgba(255, 255, 255, 0.685);
     box-shadow: 1px 1px 2px 1px#ccc, inset 1px 1px 2px 1px #ccc;
@@ -158,7 +163,7 @@ main>section {
     justify-content: space-around;
 }
 
-#home address i {
+.home address i {
     cursor: pointer;
     color: #f83200;
 }
@@ -422,7 +427,6 @@ footer label {
     height: 30px;
     width: 30px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    /* font-weight: bold; */
     font-size: 3em;
 }
 

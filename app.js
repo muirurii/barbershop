@@ -17,14 +17,14 @@ const rotateTestimonials = () => {
     }
 }
 
-setInterval(rotateTestimonials, 4000);
+setInterval(rotateTestimonials, 5000);
 
 window.addEventListener('scroll', () => {
     document.querySelectorAll('main>section').forEach(sec => {
         const scroll = window.scrollY;
         const offsetTop = sec.offsetTop;
         const height = sec.offsetHeight;
-        if (scroll >= offsetTop && scroll < height + offsetTop) {
+        if (scroll >= offsetTop && scroll < height + offsetTop -200) {
             const id = sec.getAttribute('id');
             document.querySelectorAll('header nav ul li').forEach(li => {
                 li.classList.remove('active');
