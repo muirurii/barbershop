@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Quicksand:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Quicksand:wght@300;400&display=swap&family=Chakra+Petch:wght@300&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -36,9 +36,32 @@ header {
     transition: height 400ms ease-in-out;
 }
 
-h1,
-h2 {
+h1 {
     font-family: 'Cinzel';
+}
+
+h2 {
+    font-family: 'Chakra Petch';
+    font-weight: bold;
+    position: relative;
+    color: #f83200;
+    padding: 2em 0;
+    text-align: center;
+    z-index: 2;
+}
+
+h2::after {
+    position: absolute;
+    content: '';
+    height: 80%;
+    width: 80px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: url('./beardimage.png');
+    background-size: 100% 100%;
+    z-index: -1;
+    opacity: 0.4;
 }
 
 header .tittle p {
@@ -54,11 +77,11 @@ header.scrolled {
 header .logo {
     background-image: url(cdf4d2b429714c578eb18894fe354a88.png);
     background-position: center;
-    height: 100%;
+    height: 90%;
     width: 200px;
     position: absolute;
     left: 20px;
-    top: 0%;
+    top: 5%;
 }
 
 header nav {
@@ -138,7 +161,7 @@ main>section {
 }
 
 .home section button {
-    background-color: #f83200;
+    background: #f83200;
     border: none;
     padding: 1em 2em;
     color: #fff;
@@ -146,6 +169,31 @@ main>section {
     margin-top: 1em;
     cursor: pointer;
     font-family: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.home section button::after {
+    content: '';
+    background-color: #fffefee5;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transition: 100ms;
+    transform-origin: right;
+}
+
+.home section button:hover>::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.home section button:hover {
+    /* color: #000; */
+    /* background-color: #fff; */
 }
 
 .home address {
@@ -170,12 +218,6 @@ main>section {
 
 main #services {
     background-color: #ffffff;
-}
-
-main h2 {
-    text-align: center;
-    color: #000;
-    padding: 2em 0;
 }
 
 main #services div {
@@ -253,6 +295,7 @@ main #services div article::before {
 main #services div article:hover {
     --extension: 200px;
     background-size: 99% 99%;
+    background-color: rgba(0, 0, 0, 0.815);
 }
 
 main #services div article h3 {
@@ -263,6 +306,66 @@ main #services div article h3 {
 main #services div article p {
     color: #fff;
     max-width: 250px;
+}
+
+#about section {
+    margin: 0 auto;
+    width: 600px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-gap: 2em;
+}
+
+#about section article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 5px;
+    transition: 300ms linear;
+}
+
+#about section article div {
+    min-height: 300px;
+}
+
+#about section article:nth-child(odd) .image {
+    order: 2;
+}
+
+#about section article .image {
+    background-size: 100% 100%;
+    border-radius: 5px;
+}
+
+#about section article .text {
+    padding: 1em;
+}
+
+#about section article:first-child .image {
+    background-image: url('https://images.pexels.com/photos/3998389/pexels-photo-3998389.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+}
+
+#about section article:nth-child(2) .image {
+    background-image: url('https://images.pexels.com/photos/4663133/pexels-photo-4663133.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+}
+
+#about section article:nth-child(3) .image {
+    background-image: url('https://images.pexels.com/photos/5650025/pexels-photo-5650025.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+}
+
+#about section article:nth-child(4) .image {
+    background-image: url('https://images.pexels.com/photos/7109734/pexels-photo-7109734.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+}
+
+#about section article p {
+    line-height: 1.5;
+}
+
+#about section article h3 {
+    padding-bottom: 1em;
+}
+
+#about section article:hover {
+    box-shadow: 0px 4px 2px 0px #f83200;
 }
 
 #pricing {
@@ -394,7 +497,7 @@ footer label {
     position: relative;
     overflow: hidden;
     border: 1px solid #f83200;
-    margin: 0 2em;
+    margin: 1em 2em;
 }
 
 #testimonials-section #testimonials article {
@@ -447,4 +550,49 @@ footer label {
 #testimonials-section #testimonials article.current {
     transform-origin: top;
     transform: scaleY(1);
+}
+
+#feedback-form fieldset {
+    border: 1px #f83200 solid;
+    width: 60%;
+    height: 160px;
+    margin: 2em auto;
+    border-radius: 3px;
+    padding-left: 2em;
+}
+
+#feedback-form input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+#feedback-form input:focus::placeholder {
+    opacity: 0;
+}
+
+#feedback-form input:focus {
+    border-width: 6px;
+}
+
+#feedback-form fieldset legend.anime {
+    animation: fade 200ms forwards linear;
+}
+
+@keyframes fade {
+    from {
+        transform: translateY(60px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+#feedback-form input[type="submit"] {
+    width: 50%;
+    margin: 0 25%;
+    border-radius: 40px;
 }
