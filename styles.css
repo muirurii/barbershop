@@ -22,7 +22,7 @@ a {
 header {
     --primary-color: #000;
     --secondary-color: #fff;
-    height: 20vh;
+    min-height: 20vh;
     width: 100%;
     background-color: #fff;
     box-shadow: 0px 1px 3px 1px #001d15;
@@ -80,7 +80,7 @@ header .logo {
     height: 90%;
     width: 200px;
     position: absolute;
-    left: 20px;
+    left: 0px;
     top: 5%;
 }
 
@@ -134,7 +134,7 @@ main>section {
 
 .home {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(https://images.pexels.com/photos/3037244/pexels-photo-3037244.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900);
     background-size: 100% 100%;
     background-attachment: fixed;
@@ -151,6 +151,7 @@ main>section {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1em;
 }
 
 .home section p {
@@ -186,10 +187,11 @@ main>section {
     background-color: rgba(255, 255, 255, 0.685);
     box-shadow: 1px 1px 2px 1px#ccc, inset 1px 1px 2px 1px #ccc;
     border-radius: 5px;
-    padding: 2em 1em;
+    width: 2em;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
 }
 
 .home address i {
@@ -204,8 +206,9 @@ main #services {
 main #services div {
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     place-items: center;
+    grid-gap: 2em;
 }
 
 main #services div article {
@@ -215,11 +218,11 @@ main #services div article {
     border-radius: 5px;
     transition: background 300ms;
     height: 200px;
-    width: 300px;
+    width: 280px;
     position: relative;
     border: 0px solid #fff;
     --extension: -200px;
-    padding-left: 2em;
+    padding: 0 2em;
     cursor: pointer;
     pointer-events: painted;
 }
@@ -260,7 +263,7 @@ main #services div article::before {
 main #services div article::after {
     top: 10px;
     left: 5px;
-    width: calc(var(--extension) + 110px);
+    width: calc(var(--extension) + 90px);
     height: var(--extension);
     border-width: 1px 0;
 }
@@ -269,7 +272,7 @@ main #services div article::before {
     bottom: -15px;
     right: -10px;
     height: calc(var(--extension) + 10px);
-    width: calc(var(--extension) + 100px);
+    width: calc(var(--extension) + 80px);
     border-width: 0 1px;
 }
 
@@ -434,47 +437,6 @@ input[type="checkbox"] {
     accent-color: #f83200;
 }
 
-footer {
-    min-height: 20vh;
-    background-color: rgb(255, 72, 0);
-    display: flex;
-    justify-content: space-evenly;
-    padding: 2em 0;
-    margin-top: 2em;
-}
-
-footer address ul {
-    line-height: 1.2;
-    padding: 1em 0 1em 2em;
-}
-
-footer h3 {
-    text-decoration: underline;
-    padding-bottom: 1em;
-}
-
-footer article {
-    border-left: 1px solid #000;
-    padding-left: 4em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
-
-footer i,
-footer a {
-    color: #000;
-}
-
-footer li:hover {
-    text-decoration: underline;
-}
-
-footer label {
-    justify-self: flex-end;
-}
-
 #testimonials-section #testimonials {
     height: 60vh;
     position: relative;
@@ -578,4 +540,100 @@ footer label {
     width: 50%;
     margin: 0 25%;
     border-radius: 40px;
+}
+
+footer {
+    min-height: 20vh;
+    background-color: rgb(255, 72, 0);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2em 0;
+    margin-top: 2em;
+}
+
+footer address ul {
+    line-height: 1.2;
+    padding: 1em 0 1em 2em;
+}
+
+footer h3 {
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+footer article {
+    border-left: 1px solid #000;
+    padding-left: 4em;
+    position: relative;
+}
+
+footer i,
+footer a {
+    color: #000;
+}
+
+footer li:hover {
+    text-decoration: underline;
+}
+
+footer label {
+    position: absolute;
+    bottom: -2em;
+    color: #fff;
+}
+
+@media (max-width:980px) {
+    main #services div {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width:700px) {
+    header nav {
+        display: none;
+    }
+    .logo {
+        display: none;
+    }
+    .home address {
+        width: 80%;
+        height: 2em;
+        flex-direction: row;
+        top: unset;
+        bottom: -8px;
+        left: 2em;
+    }
+}
+
+@media (max-width:670px) {
+    main #services div,
+    #about section article {
+        grid-template-columns: 1fr;
+    }
+    #about section {
+        width: 300px;
+    }
+    #about section article .image {
+        order: 2;
+    }
+    footer {
+        display: block;
+    }
+    footer address,
+    footer article {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    footer article {
+        border: none;
+    }
+}
+
+@media (max-width:405px) {
+    table,
+    #booking form {
+        width: 280px;
+    }
 }
