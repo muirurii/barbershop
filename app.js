@@ -24,7 +24,8 @@ window.addEventListener('scroll', () => {
         const scroll = window.scrollY;
         const offsetTop = sec.offsetTop;
         const height = sec.offsetHeight;
-        if (scroll >= offsetTop && scroll < height + offsetTop -200) {
+
+        if (scroll >= offsetTop && scroll < height + offsetTop - 350) {
             const id = sec.getAttribute('id');
             document.querySelectorAll('header nav ul li').forEach(li => {
                 li.classList.remove('active');
@@ -32,4 +33,17 @@ window.addEventListener('scroll', () => {
             });
         }
     });
+});
+
+const feedInput = document.querySelector('#feed-text');
+const legend = document.querySelector('legend');
+feedInput.addEventListener('focus', () => {
+    legend.textContent = 'Enter Feedback Here';
+    legend.className = 'anime';
+});
+feedInput.addEventListener('blur', () => {
+    if (!feedInput.value.length) {
+        legend.textContent = '';
+        legend.className = '';
+    }
 });

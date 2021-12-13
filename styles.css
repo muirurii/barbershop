@@ -173,27 +173,8 @@ main>section {
     overflow: hidden;
 }
 
-.home section button::after {
-    content: '';
-    background-color: #fffefee5;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    transform: scaleX(0);
-    transition: 100ms;
-    transform-origin: right;
-}
-
-.home section button:hover>::after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
 .home section button:hover {
-    /* color: #000; */
-    /* background-color: #fff; */
+    opacity: 0.9;
 }
 
 .home address {
@@ -415,7 +396,7 @@ cite {
     border-radius: 5px;
     min-height: 400px;
     width: 400px;
-    line-height: 3;
+    line-height: 5;
     padding: 2em 2em;
 }
 
@@ -423,8 +404,10 @@ form .main-label {
     font-weight: bold;
 }
 
-#service-options {
-    padding-left: 1em;
+#booking form select {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: .5em 1em;
 }
 
 input[type="submit"] {
@@ -443,7 +426,7 @@ input[type="submit"]:hover {
 }
 
 input[type="number"],
-input[type="time"] {
+input[type="datetime-local"] {
     height: 25px;
 }
 

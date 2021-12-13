@@ -93,30 +93,35 @@
                     <div class="image"></div>
                     <div class="text">
                         <h3>Professional Staff</h3>
-                        Lorem ratione quo ipsum dolor sit amet autemconsectetur. Blanditiis pariatur iste debitis voluptatum temporibus id ea voluptate inventore, nobis odit magnam. Ullam dolorum amet iusto qui unde quasi perferendis fugit repudiandae? Deleniti consectetur earum
-                        distinctio quidem perferendis.
+                        <p>
+                            Lorem ratione quo ipsum dolor sit amet autemconsectetur. Blanditiis pariatur iste debitis voluptatum temporibus id ea voluptate inventore, nobis odit magnam. Ullam dolorum amet iusto qui unde quasi perferendis fugit repudiandae? Deleniti consectetur earum
+                            distinctio quidem perferendis.
+                        </p>
                     </div>
                 </article>
                 <article>
                     <div class="image"></div>
                     <div class="text">
                         <h3>Hygiene</h3>
-                        Deleniti psum Perferendis pariatur dolor sit amet consectetur quidem iste debitis voluptatum temporibus id ea voluptate inventore, nobis odit magnam. Ullam dolorum amet iusto qui unde quasi perferendis fugit repudiandae? autem consectetur quo earum ratione.
+                        <p>
+                            odit magnam. Ullam dolorum amet iusto qui unde quasi perferendis fugit consectetur quo earum ratione. Deleniti psum Perferendis pariatur dolor sit amet consectetur quidem iste debitis voluptatum temporibus id ea voluptate inventore, nobis
+                        </p>
                     </div>
                 </article>
                 <article>
                     <div class="image"></div>
                     <div class="text">
                         <h3>Affordable Pricing</h3>
-                        Lorem ipsum dolor sit amet consectetur earum ratione landitiis distinctio quidem perferendis pariatur iste debitis voluptatum temporibus id nobis odit magnam. Ullam dolorum amet iusto qui unde quasi perferendis fugit repudiandae autem eleniti quo.
+                        <p>Lorem ipsum dolor sit amet consectetur earum ratione landitiis distinctio quidem perferendis pariatur iste debitis voluptatum temporibus id nobis odit magnam. Ullam dolorum amet iusto qui unde quasi perferendis fugit repudiandae
+                            autem eleniti quo.</p>
                     </div>
                 </article>
                 <article>
                     <div class="image"></div>
                     <div class="text">
                         <h3>Comfort</h3>
-                        Lorem ipsum dolor sit amet consectetur. Blanditiis distinctio quider iste debitis voluptatum temporibus id ea voluptate inventore, nobis odit magnam. Ullam dolorum amet iusto qui unde quasi perferendis fugit repudiandae? Deleniti autem consectetur ea
-                        perferendis pariatu.
+                        <p> Lorem ipsum dolor sit amet consectetur. Blanditiis distinctio quider iste debitis voluptatum temporibus id ea voluptate inventore, nobis odit magnam. Ullam dolorum amet iusto qui unde quasi perferendis fugit repudiandae? Deleniti
+                            autem consectetur ea perferendis pariatu.</p>
                     </div>
                 </article>
             </section>
@@ -165,34 +170,22 @@
             <h2>Booking</h2>
             <form>
                 <label class="main-label">Service</label>
-                <div id="service-options">
-                    <div>
-                        <label for="shave">Shave</label>
-                        <input type="checkbox" id="shave">
-                    </div>
-                    <div>
-                        <label for="massage">Massage</label>
-                        <input type="checkbox" id="massage">
-                    </div>
-                    <div>
-                        <label for="wash">Wash</label>
-                        <input type="checkbox" id="wash">
-                    </div>
-                    <div>
-                        <label for="other">Other</label>
-                        <input type="checkbox" id="other">
-                    </div>
-                    <div>
-                        <input type="datetime-local" name="" id="" min="10">
-                    </div>
-                </div>
+                <select name="" id="">
+                    <option value="">Head Shave</option>
+                    <option value="">Neck Shave</option>
+                    <option value="">Beard Shave</option>
+                    <option value="">Mustache Trimming</option>
+                    <option value="">Massage</option>
+                    <option value="">Head Wash</option>
+                    <option value="">Others</option>
+                </select>
                 <div>
                     <label class="main-label" for="seats">Seats</label>
                     <input type="number" name="" id="seats" min="1" max="20" value="1">
                 </div>
                 <div>
                     <label for="time" class="main-label">Time</label>
-                    <input type="time" name="" id="time">
+                    <input type="datetime-local" name="" id="time">
                 </div>
                 <input type="submit" value="Book">
             </form>
@@ -203,7 +196,7 @@
                 <form>
                     <fieldset>
                         <legend></legend>
-                        <input type="text" id="feed-text" placeholder="Enter Feedback Here">
+                        <input type="text" id="feed-text" placeholder="Enter Feedback Here" autocapitalize="on">
                     </fieldset>
                     <input type="submit" value="Send">
                 </form>
@@ -266,7 +259,10 @@
             </ul>
         </address>
         <article>
-            <p>Open Monday to friday from 6a.m to 4p.m</p>
+            <div>
+                <h3>Opening Hours <i class="fas fa-clock"></i></h3>
+                <p>Monday to Sunday &rArr; 7:00 a.m to 8:00 p.m</p>
+            </div>
             <label>Executive Barbers 2021&copy;</label>
         </article>
     </footer>
