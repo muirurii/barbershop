@@ -187,7 +187,7 @@ header nav ul li.active::before {
 
 .hamburger {
     position: absolute;
-    top: 6em;
+    top: 7em;
     left: 1em;
     width: 30px;
     cursor: pointer;
@@ -753,6 +753,6 @@ footer label {
         align-items: flex-start;
     }
     header h1 {
-        padding-left: .5em;
+        padding-left: 2px;
     }
 }
