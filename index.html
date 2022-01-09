@@ -14,10 +14,24 @@
 <body>
     <header>
         <div class="tittle">
-            <h1>Executive Barbers</h1>
+            <h1>Royal Executive</h1>
             <p>You grow it we cut it</p>
         </div>
-        <div class="logo"></div>
+        <div class="logo">
+            <h6>R</h6>
+            <h6 class="letter-e">E</h6>
+        </div>
+        <div class="hamburger"></div>
+        <div class="menu-alt hide">
+            <ul>
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#booking">Booking</a></li>
+                <li><a href="#testimonials-section">FeedBack</a></li>
+            </ul>
+        </div>
         <nav>
             <ul>
                 <li class="active"><a href="#">Home</a></li>
@@ -139,23 +153,23 @@
                         <td>3$ - 5$</td>
                     </tr>
                     <tr>
-                        <td>Hair Shave</td>
+                        <td>Beard Shave</td>
                         <td>3$ - 5$</td>
                     </tr>
                     <tr>
-                        <td>Hair Shave</td>
+                        <td>Neck Shave</td>
                         <td>3$ - 5$</td>
                     </tr>
                     <tr>
-                        <td>Hair Shave</td>
+                        <td>Massage</td>
                         <td>3$ - 5$</td>
                     </tr>
                     <tr>
-                        <td>Hair Shave</td>
+                        <td>Beard Trim</td>
                         <td>3$ - 5$</td>
                     </tr>
                     <tr>
-                        <td>Hair Shave</td>
+                        <td>Hair Wash</td>
                         <td>3$ - 5$</td>
                     </tr>
                 </tbody>
@@ -170,7 +184,8 @@
             <h2>Booking</h2>
             <form>
                 <label class="main-label">Service</label>
-                <select name="" id="">
+                <select name="" id="" required>
+                    <option value="">---</option>
                     <option value="">Head Shave</option>
                     <option value="">Neck Shave</option>
                     <option value="">Beard Shave</option>
@@ -181,11 +196,11 @@
                 </select>
                 <div>
                     <label class="main-label" for="seats">Seats</label>
-                    <input type="number" name="" id="seats" min="1" max="20" value="1">
+                    <input type="number" name="" id="seats" min="1" max="20" value="1" required>
                 </div>
                 <div>
                     <label for="time" class="main-label">Time</label>
-                    <input type="datetime-local" name="" id="time">
+                    <input type="datetime-local" name="" id="time" required>
                 </div>
                 <input type="submit" value="Book">
             </form>
@@ -196,7 +211,7 @@
                 <form>
                     <fieldset>
                         <legend></legend>
-                        <input type="text" id="feed-text" placeholder="Enter Feedback Here" autocapitalize="on">
+                        <input type="text" id="feed-text" placeholder="Enter Feedback Here" autocapitalize="on" required>
                     </fieldset>
                     <input type="submit" value="Send">
                 </form>

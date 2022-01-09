@@ -1,3 +1,4 @@
+//Scroll functionality
 window.addEventListener('scroll', () => {
     if (window.scrollY > 200) {
         document.querySelector('header').classList.add('scrolled');
@@ -5,19 +6,6 @@ window.addEventListener('scroll', () => {
         document.querySelector('header').classList.remove('scrolled');
     }
 });
-
-const testimonialsArray = document.querySelectorAll('#testimonials-section #testimonials article');
-const rotateTestimonials = () => {
-    const current = document.querySelector('.current');
-    current.classList.remove('current');
-    if (current.nextElementSibling) {
-        current.nextElementSibling.classList.add('current');
-    } else {
-        testimonialsArray[0].classList.add('current');
-    }
-}
-
-setInterval(rotateTestimonials, 5000);
 
 window.addEventListener('scroll', () => {
     document.querySelectorAll('main>section').forEach(sec => {
@@ -35,6 +23,23 @@ window.addEventListener('scroll', () => {
     });
 });
 
+//testimonials
+
+const testimonialsArray = document.querySelectorAll('#testimonials-section #testimonials article');
+const rotateTestimonials = () => {
+    const current = document.querySelector('.current');
+    current.classList.remove('current');
+    if (current.nextElementSibling) {
+        current.nextElementSibling.classList.add('current');
+    } else {
+        testimonialsArray[0].classList.add('current');
+    }
+}
+
+setInterval(rotateTestimonials, 5000);
+
+//feedback input effect
+
 const feedInput = document.querySelector('#feed-text');
 const legend = document.querySelector('legend');
 feedInput.addEventListener('focus', () => {
@@ -47,3 +52,24 @@ feedInput.addEventListener('blur', () => {
         legend.className = '';
     }
 });
+
+//form handler
+
+document.querySelectorAll('form').forEach(form => form.addEventListener('submit', (e) => {
+    e.preventDefault();
+}));
+
+//Hamburger
+const menu = document.querySelector('.menu-alt');
+
+document.querySelector('.hamburger').addEventListener('click', (e) => {
+    if (e.target.classList.contains('menu-closed')) {
+        e.target.classList.remove('menu-closed');
+        menu.classList.add('hide');
+
+    } else {
+        e.target.classList.add('menu-closed');
+        menu.classList.remove('hide');
+
+    }
+})
