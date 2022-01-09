@@ -1,2 +1,2 @@
 # barbershop
-[Live](https://muirurii.github.io/dictionary/ "babershop")
+[Live](https://muirurii.github.io/barbershop/ "babershop")
