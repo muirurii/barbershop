@@ -2,10 +2,15 @@
 window.addEventListener('scroll', () => {
     if (window.scrollY > 200) {
         document.querySelector('header').classList.add('scrolled');
+        document.querySelector('#to-top').classList.add('show-top');
     } else {
         document.querySelector('header').classList.remove('scrolled');
+        document.querySelector('#to-top').classList.remove('show-top');
     }
 });
+
+const headerHeight = document.querySelector('header').offsetHeight;
+
 
 window.addEventListener('scroll', () => {
     document.querySelectorAll('main>section').forEach(sec => {
@@ -13,15 +18,20 @@ window.addEventListener('scroll', () => {
         const offsetTop = sec.offsetTop;
         const height = sec.offsetHeight;
 
-        if (scroll >= offsetTop && scroll < height + offsetTop - 350) {
+        if (scroll + headerHeight >= offsetTop && scroll <= height + (offsetTop)) {
             const id = sec.getAttribute('id');
             document.querySelectorAll('header nav ul li').forEach(li => {
                 li.classList.remove('active');
-                document.querySelector(`header nav ul li a[href*="${id}"]`).parentElement.classList.add('active');
             });
+            document.querySelector(`header nav ul li a[href*="${id}"]`).parentElement.classList.add('active');
+            return;
         }
     });
 });
+// Back to top
+document.querySelector('.fa-arrow-circle-up').addEventListener('click', () => {
+    window.scrollTo(0, 0);
+})
 
 //testimonials
 
@@ -72,4 +82,10 @@ document.querySelector('.hamburger').addEventListener('click', (e) => {
         menu.classList.remove('hide');
 
     }
+});
+
+document.querySelector('.to-booking').addEventListener('click', () => {
+    const bookingPagePosition = document.querySelector('#booking').offsetTop;
+    console.log(bookingPagePosition);
+    window.scrollTo(0, bookingPagePosition)
 })
