@@ -22,7 +22,7 @@ a {
 header {
     --primary-color: #000;
     --secondary-color: #fff;
-    min-height: 100px;
+    min-height: 80px;
     width: 100%;
     background-color: #fff;
     box-shadow: 0px 1px 3px 1px #001d15;
@@ -88,7 +88,7 @@ header.scrolled {
     top: 20px;
     text-align: center;
     line-height: 0.6;
-    padding: 4px;
+    padding: 5px 0px;
     box-shadow: 1px 0 3px 2px #b1a29f;
 }
 
