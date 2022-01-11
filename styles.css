@@ -114,6 +114,7 @@ header nav {
     height: 50px;
     width: 100%;
     background-color: var(--secondary-color);
+    transition: background 600ms ease-in-out;
 }
 
 header nav ul {
@@ -145,12 +146,12 @@ header nav ul li.active::before {
 }
 
 .menu-alt {
-    background-color: #ccc;
+    background-color: #fff;
     position: absolute;
-    top: calc(16vh + 2px);
+    top: 70px;
     left: 0;
     width: 100%;
-    margin-top: 1em;
+    margin-top: 1.4em;
     transition: transform 600ms ease-in-out;
     overflow: hidden;
 }
@@ -168,12 +169,12 @@ header nav ul li.active::before {
     border-bottom: .5px solid #dddcdccc;
     padding: .5em 0;
     text-align: center;
-    transition: transform 400ms;
+    transition: transform 200ms linear;
 }
 
 .menu-alt li:hover {
-    transform: scaleY(1.08);
-    background-color: #dddcdccc;
+    transform: scaleY(1.05);
+    /* background-color: #dddcdccc; */
 }
 
 .menu-alt li a {
@@ -183,21 +184,17 @@ header nav ul li.active::before {
 
 .menu-alt.hide {
     transform: translateX(-100%);
+    transition: all 0;
 }
 
 .hamburger {
     position: absolute;
-    top: 7em;
-    left: 1em;
+    top: calc(70px + 10px);
+    left: 0.5em;
     width: 30px;
     cursor: pointer;
     z-index: 5;
     display: none;
-    transition: 600ms ease-in-out;
-}
-
-.hamburger.menu-closed {
-    transform: translateX(calc(100vw - 2em - 30px));
 }
 
 .hamburger.menu-closed::before,
@@ -210,7 +207,7 @@ header nav ul li.active::before {
     content: '';
     position: absolute;
     left: 0;
-    transition: transform 1300ms;
+    transition: transform 600ms;
 }
 
 .hamburger,
@@ -235,12 +232,12 @@ header nav ul li.active::before {
 main {
     min-height: 200vh;
     width: 100vw;
-    padding-top: 20vh;
+    padding-top: 70px;
     background-color: rgba(255, 255, 255, 0.76);
 }
 
 main>section {
-    padding: 20vh 0 5vh 0;
+    padding: 70px 0 5vh 0;
 }
 
 .home {
@@ -742,7 +739,7 @@ footer label {
     footer address,
     footer article {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         flex-direction: column;
     }

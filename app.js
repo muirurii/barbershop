@@ -31,7 +31,7 @@ window.addEventListener('scroll', () => {
 // Back to top
 document.querySelector('.fa-arrow-circle-up').addEventListener('click', () => {
     window.scrollTo(0, 0);
-})
+});
 
 //testimonials
 
@@ -80,12 +80,10 @@ document.querySelector('.hamburger').addEventListener('click', (e) => {
     } else {
         e.target.classList.add('menu-closed');
         menu.classList.remove('hide');
-
     }
 });
 
 document.querySelector('.to-booking').addEventListener('click', () => {
     const bookingPagePosition = document.querySelector('#booking').offsetTop;
-    console.log(bookingPagePosition);
-    window.scrollTo(0, bookingPagePosition)
-})
+    window.scrollTo(0, bookingPagePosition);
+});
