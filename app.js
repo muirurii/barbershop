@@ -71,16 +71,24 @@ document.querySelectorAll('form').forEach(form => form.addEventListener('submit'
 
 //Hamburger
 const menu = document.querySelector('.menu-alt');
+const hamburger = document.querySelector('.hamburger');
 
-document.querySelector('.hamburger').addEventListener('click', (e) => {
+const closeMenu = () => {
+    hamburger.classList.remove('menu-closed');
+    menu.classList.remove('show');
+}
+
+hamburger.addEventListener('click', (e) => {
     if (e.target.classList.contains('menu-closed')) {
-        e.target.classList.remove('menu-closed');
-        menu.classList.add('hide');
-
+        closeMenu();
     } else {
-        e.target.classList.add('menu-closed');
-        menu.classList.remove('hide');
+        hamburger.classList.add('menu-closed');
+        menu.classList.add('show');
     }
+});
+
+menu.querySelectorAll('a').forEach(li => {
+    li.addEventListener('click', closeMenu);
 });
 
 document.querySelector('.to-booking').addEventListener('click', () => {
