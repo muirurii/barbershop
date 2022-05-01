@@ -6,26 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/9f145c69b6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/fonts/css/all.css">
+    <!-- <script src="https://kit.fontawesome.com/9f145c69b6.js" crossorigin="anonymous"></script> -->
     <script src="app.js" defer></script>
     <title>Barber</title>
 </head>
 
 <body>
-    <header class="center">
+    <header>
         <div class="title">
             <h1>Royal Executive</h1>
             <p>You grow it we cut it</p>
         </div>
-        <div class="logo center">
-            <div class="logo-text">
-                <h6>R</h6>
-                <h6 class="letter-e">E</h6>
-            </div>
-        </div>
         <div class="hamburger"></div>
         <div class="menu-alt">
-            <ul>
+            <ul class="center">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About Us</a></li>
@@ -34,7 +29,7 @@
                 <li><a href="#testimonials-section">FeedBack</a></li>
             </ul>
         </div>
-        <nav>
+        <nav class="main-nav">
             <ul>
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -44,6 +39,7 @@
                 <li><a href="#testimonials-section">FeedBack</a></li>
             </ul>
         </nav>
+        <button id="to-top"><i class="fas fa-arrow-circle-up"></i></button>
     </header>
     <main>
         <section id="#" class="home">
@@ -52,7 +48,7 @@
                     <p class="highlight">
                         We are the best professional barber's around. <br /> get your dream cut with us!
                     </p>
-                    <button class="to-booking">Book A Seat</button>
+                    <button class="to-booking btn">Book A Seat</button>
                 </article>
             </section>
 
@@ -138,7 +134,7 @@
                 </article>
             </section>
         </section>
-        <section id="pricing">
+        <section id="pricing" class="center">
             <h2>Pricing</h2>
             <table>
                 <thead>
@@ -172,15 +168,15 @@
                     </tr>
                 </tbody>
             </table>
-            <p>
-                Baby's first haircut is free,groom and event services available
-            </p>
+            <cite>
+                Baby's first haircut is free, groom and event services available
+            </cite>
         </section>
-        <section id="booking">
+        <section id="booking" class="center">
             <h2>Booking</h2>
             <form>
-                <label class="main-label">Service</label>
-                <select name="" id="" required>
+                <label class="main-label" for="select">Service</label>
+                <select name="" id="select" required>
                     <option value="">--Select Service--</option>
                     <option value="">Head Shave</option>
                     <option value="">Neck Shave</option>
@@ -198,7 +194,7 @@
                     <label for="time" class="main-label">Time</label>
                     <input type="datetime-local" name="" id="time" required>
                 </div>
-                <input type="submit" value="Book">
+                <button type="submit" class="book btn">Book</button>
             </form>
         </section>
         <section id="testimonials-section">
@@ -209,45 +205,42 @@
                         <legend></legend>
                         <input type="text" id="feed-text" placeholder="Enter Feedback Here" autocapitalize="on" required>
                     </fieldset>
-                    <input type="submit" value="Send">
+                    <button type="submit" class="send btn">Send</button>
                 </form>
             </section>
             <h2>What Others Say</h2>
-            <section id="testimonials">
-                <article class="current">
+            <section id="testimonials" class="center">
+                <article class="testimonial center hidden">
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-circle"></i>
                     <p class="testimonial-text">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt praesentium molestiae quaerat aliquam tempora doloribus reprehenderit!
                     </p>
                     <div>
-                        <label for="">John Doe</label>
+                        <label for="">-John Doe</label>
                         <p>Banker</p>
                     </div>
                 </article>
-                <article>
+                <article class="testimonial center hidden">
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-circle"></i>
                     <p class="testimonial-text">
                         Lorem ipsum dolor sit amet consectetur raesentiu elit. Deserunt pmadipisicing molestiae quaerat aliquam tempora doloribus reprehenderit!
                     </p>
                     <div>
-                        <label for="">Smith White</label>
+                        <label for="">-Smith White</label>
                         <p>Teacher</p>
                     </div>
                 </article>
-                <article>
+                <article class="testimonial center hidden">
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-circle"></i>
                     <p class="testimonial-text">
                         Lorem rcons ecsit amet teestiae quaera turipsu mmolt dolo adipisicing elitm aliquam tempora doloribus reprehenderit!
                     </p>
                     <div>
-                        <label for="">Musa Juma</label>
+                        <label for="">-Musa Juma</label>
                         <p>Kadhi</p>
-                    </div>
-                </article>
-                <article>
-                    <p class="testimonial-text">
-                        Lorem ipsu elit. Deserunt praesentm dolor sit amet consectetur adipisicingium mole stiae quaen ratibus reprehenderit!
-                    </p>
-                    <div>
-                        <label for="">Henry Smith</label>
-                        <p>Pastor</p>
                     </div>
                 </article>
             </section>
@@ -270,7 +263,6 @@
             </div>
         </article>
     </footer>
-    <button id="to-top"><i class="fas fa-arrow-circle-up"></i></button>
 </body>
 
 </html>

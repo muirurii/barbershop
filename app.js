@@ -1,15 +1,30 @@
 //Scroll functionality
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-        document.querySelector('header').classList.add('scrolled');
-        document.querySelector('#to-top').classList.add('show-top');
-    } else {
-        document.querySelector('header').classList.remove('scrolled');
-        document.querySelector('#to-top').classList.remove('show-top');
-    }
+// window.addEventListener('scroll', () => {
+//     if (window.scrollY > 200) {
+//         document.querySelector('header').classList.add('scrolled');
+//         .classList.add('show-top');
+//     } else {
+//         document.querySelector('header').classList.remove('scrolled');
+//         document.querySelector('#to-top').classList.remove('show-top');
+//     }
+// });
+
+window.addEventListener('resize', () => {
+    console.log(document.querySelector('header h1').clientWidth)
+})
+
+const heroText = document.querySelector('.highlight');
+const header = document.querySelector('header');
+const toTop = document.querySelector('#to-top');
+
+const observeHeader = new IntersectionObserver(entry => {
+    header.className = entry[0].isIntersecting ? null : 'scrolled';
 });
 
-const headerHeight = document.querySelector('header').offsetHeight;
+observeHeader.observe(heroText);;
+
+
+const headerHeight = header.offsetHeight;
 
 
 window.addEventListener('scroll', () => {
@@ -35,18 +50,21 @@ document.querySelector('.fa-arrow-circle-up').addEventListener('click', () => {
 
 //testimonials
 
-const testimonialsArray = document.querySelectorAll('#testimonials-section #testimonials article');
-const rotateTestimonials = () => {
-    const current = document.querySelector('.current');
-    current.classList.remove('current');
-    if (current.nextElementSibling) {
-        current.nextElementSibling.classList.add('current');
-    } else {
-        testimonialsArray[0].classList.add('current');
-    }
-}
+const testimonials = document.querySelectorAll('.testimonial');
 
-setInterval(rotateTestimonials, 5000);
+const testimonialObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.remove('hidden');
+        }
+    });
+}, {
+    threshold: 0
+});
+
+
+testimonials.forEach(testimonial => testimonialObserver.observe(testimonial))
+
 
 //feedback input effect
 
