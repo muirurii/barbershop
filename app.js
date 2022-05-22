@@ -124,3 +124,9 @@ document.querySelector('.to-booking').addEventListener('click', () => {
     const bookingPagePosition = document.querySelector('#booking').offsetTop;
     window.scrollTo(0, bookingPagePosition);
 });
+
+//Loader
+
+window.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('.loader').classList.add('loaded')
+});
