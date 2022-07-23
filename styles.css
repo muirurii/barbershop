@@ -85,7 +85,7 @@ button {
     padding: 1.3em 0;
     background-color: var(--primaryColor);
     color: var(--secondaryColor);
-    width: 200px;
+    width: 130px;
     border-radius: 5px;
     display: block;
     text-align: center;
@@ -93,7 +93,7 @@ button {
 }
 
 header {
-    height: 110px;
+    height: 90px;
     width: 100vw;
     background-color: var(--primaryColor);
     padding: 1em 0;
@@ -106,6 +106,7 @@ header h1 {
     font-family: 'Satisfy', serif;
     position: relative;
     color: var(--secondaryColor);
+    font-size: 1.6rem;
 }
 
 .title {
@@ -114,6 +115,7 @@ header h1 {
 
 .title p {
     color: var(--grayColor);
+    font-size: .8rem;
 }
 
 h2 {
@@ -168,7 +170,7 @@ h2::after {
     margin-top: 1.4em;
     opacity: 0;
     transform: translateX(-100%);
-    transition: transform 600ms ease-in-out;
+    transition: all 350ms ease-in-out;
     pointer-events: none;
 }
 
@@ -195,7 +197,7 @@ h2::after {
 
 .hamburger {
     position: absolute;
-    top: 95px;
+    top: 75px;
     left: 1em;
     width: 30px;
     height: 4px;
@@ -238,7 +240,7 @@ main>section {
 .home {
     background-color: var(--grayColor);
     width: 100%;
-    min-height: calc(100vh + 100px);
+    min-height: 50vh;
     position: relative;
 }
 
@@ -259,13 +261,13 @@ main>section {
 
 .highlight p {
     color: var(--primaryColor);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .highlight p:first-child {
     font-family: 'Plus Jakarta Sans', serif;
     color: var(--secondaryColor);
-    font-size: 3rem;
+    font-size: clamp(2.5rem, 3.5vw, 3rem);
     padding-bottom: .5em;
 }
 
@@ -281,7 +283,7 @@ main>section {
     border: 1px solid var(--secondaryColor);
 }
 
-#services div {
+#services>div {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
@@ -290,15 +292,20 @@ main>section {
 }
 
 .service-card {
-    background-color: #000a09da;
-    background-blend-mode: darken;
     background-size: 100% 100%;
     border-radius: 5px;
     transition: background 300ms;
     height: 250px;
     width: 280px;
     position: relative;
+}
+
+.service-card div {
+    background-color: #000a09da;
+    width: 100%;
+    height: 100%;
     padding: 0 1em 0 1.5em;
+    border-radius: inherit;
 }
 
 .service-card:first-child {
@@ -331,7 +338,6 @@ main>section {
     content: '';
     border: 0px solid var(--primaryColor);
     transition: 400ms linear;
-    border-radius: 5px;
 }
 
 .service-card::after {
@@ -366,7 +372,7 @@ main>section {
 }
 
 .service-card:hover::before {
-    transition-delay: 200ms;
+    transition-delay: 400ms;
     transform: scaleY(0);
 }
 
@@ -393,6 +399,13 @@ main>section {
 .about-card {
     display: grid;
     grid-template-columns: 1fr;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 600ms ease-in-out;
+}
+
+.about-card.reveal {
+    opacity: 1;
 }
 
 .about-card div {
@@ -416,36 +429,34 @@ main>section {
     padding: 1em;
 }
 
-.about-card {
-    overflow: hidden;
-    opacity: 0;
-    transition: opacity 600ms ease-in-out;
-}
-
-.about-card.reveal {
-    opacity: 1;
-}
-
 .about-card .image {
-    transition: transform 400ms 200ms linear;
+    position: relative;
 }
 
-.about-card:nth-child(odd) .image {
-    transform: translateX(100%) rotateX(90deg);
+.about-card .image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    transform-origin: bottom;
+    transition: transform 300ms 400ms linear, opacity 200ms 600ms;
 }
 
-.about-card:nth-child(even) .image {
-    transform: translateX(-100%) rotateX(90deg);
+.about-card.reveal .image::after {
+    transform: scaleY(0);
+    opacity: 0;
 }
 
 .about-card .text {
     transform: scale(0);
-    transition: all 600ms linear;
+    transition: all 400ms linear;
 }
 
 .about-card.reveal .text,
-.about-card.reveal .rotated,
-.about-card.about-card.reveal .image {
+.about-card.reveal .rotated {
     transform: unset;
 }
 
@@ -602,7 +613,7 @@ select,
 
 .testimonial::after {
     bottom: -5px;
-    background-color: var(--grayColor);
+    background-color: hwb(0 93% 7%);
     box-shadow: .5px 0px .5px #ccccccd3, inset 0px .5px 5px #ccccccd3;
     clip-path: polygon(0% 0%, 100% 0%, 100% 88%, 63% 88%, 28% 100%, 44% 88%, 0 88%);
     z-index: -1;
@@ -610,7 +621,7 @@ select,
 
 .testimonial::before {
     bottom: calc(12% - 5.5px);
-    background-color: #bb710365;
+    background-color: #ccccccd3;
     z-index: -2;
 }
 
@@ -699,7 +710,7 @@ legend.anime {
 
 footer {
     min-height: 100px;
-    background-color: var(--primaryColor);
+    background-color: var(--grayColor);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -719,11 +730,11 @@ footer article {
 
 footer p {
     padding-bottom: 1em;
-    color: var(--grayColor);
+    color: var(--primaryColor);
 }
 
 footer i {
-    color: var(--grayColor);
+    color: var(--primaryColor);
     padding-right: 1em;
 }
 
@@ -744,52 +755,35 @@ footer i:hover {
         width: 60px;
         height: 60px;
     }
-    .title h1 {
-        font-size: 2rem;
-    }
     .main-nav {
         display: block;
         position: absolute;
         top: 100%;
         right: 0;
-        padding: 1em;
+        padding: .7em;
         width: 100%;
         color: var(--primaryColor);
         background-color: var(--grayColor);
         box-shadow: 0 .5px 1.5px var(--primaryColor);
     }
     header.scrolled {
-        height: 100px;
+        height: 80px;
     }
     .main-nav ul {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .main-nav li {
-        position: relative;
-    }
     .main-nav a {
         display: block;
         padding: 0.3em 0.5em;
-        font-size: 1.1em;
+        font-size: 1rem;
     }
-    .main-nav li::before {
-        content: '';
-        position: absolute;
-        bottom: 3px;
-        left: 2px;
-        width: calc(100% - 4px);
-        height: 2px;
-        background-color: var(--secondaryColor);
-        opacity: 0;
-        transition: all 300ms linear;
+    .main-nav li:not(.active):hover {
+        opacity: .8;
     }
-    .main-nav li:not(.active):hover:before {
-        opacity: .5;
-    }
-    .main-nav li.active::before {
-        opacity: 1;
+    .main-nav li.active {
+        color: var(--secondaryColor);
     }
     .hero {
         padding: 4em 1em 3em 2em;
@@ -804,10 +798,19 @@ footer i:hover {
         display: block;
         clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
         position: absolute;
-        top: 150px;
+        top: 100px;
         right: 0;
         height: calc(114vh);
         width: 35vw;
+        opacity: 0;
+        transform: translateX(-100%) rotateY(180deg);
+        animation: img 350ms 300ms linear forwards;
+    }
+    @keyframes img {
+        to {
+            transform: unset;
+            opacity: 1;
+        }
     }
     #services div,
     .about-card {
